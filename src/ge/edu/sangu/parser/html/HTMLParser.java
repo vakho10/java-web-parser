@@ -15,8 +15,8 @@ public class HTMLParser extends AbstractUrlParser<Document> {
         return new Document.Parser().parse(bytes);
     }
 
+    // TODO remove this method!
     private String extractTitleFrom(byte[] documentBytes) {
-        // TODO We may get different charset webpage
         String documentStr = new String(documentBytes, Charset.forName("UTF-8"));
         Matcher matcher = PATTERN_TITLE.matcher(documentStr);
         if (matcher.find()) {

@@ -1,18 +1,14 @@
 package ge.edu.sangu.parser.html;
 
 import ge.edu.sangu.parser.AbstractStringParser;
-import ge.edu.sangu.parser.IParser;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Document {
 
-    public static final Pattern PATTERN_DOCTYPE = Pattern.compile("<!DOCTYPE\\s.+>", Pattern.CASE_INSENSITIVE);
-    public static final Pattern PATTERN_HTML = Pattern.compile("<HTML.*>[\\S\\s]*</HTML>", Pattern.CASE_INSENSITIVE);
-
     private String doctypeDefinition;
-    private Element rootHtmlElement;
+    private ElementObject rootHtmlElement;
 
     public String getDoctypeDefinition() {
         return doctypeDefinition;
@@ -22,15 +18,18 @@ public class Document {
         this.doctypeDefinition = doctypeDefinition;
     }
 
-    public Element getRootHtmlElement() {
+    public ElementObject getRootHtmlElement() {
         return rootHtmlElement;
     }
 
-    public void setRootHtmlElement(Element rootHtmlElement) {
+    public void setRootHtmlElement(ElementObject rootHtmlElement) {
         this.rootHtmlElement = rootHtmlElement;
     }
 
     public static class Parser extends AbstractStringParser<Document> {
+
+        public static final Pattern PATTERN_DOCTYPE = Pattern.compile("<!DOCTYPE\\s.+>", Pattern.CASE_INSENSITIVE);
+        public static final Pattern PATTERN_HTML = Pattern.compile("<HTML.*>[\\S\\s]*</HTML>", Pattern.CASE_INSENSITIVE);
 
         @Override
         public Document parseString(String str) throws Exception {
@@ -45,8 +44,8 @@ public class Document {
             // Parse root html element
             Matcher htmlElementMatcher = PATTERN_HTML.matcher(str);
             if (htmlElementMatcher.find()) {
-                Element.Parser htmlElementParser = new Element.Parser();
-                Element htmlElement = htmlElementParser.parseString(htmlElementMatcher.group(0));
+                ElementObject.Parser htmlElementParser = new ElementObject.Parser();
+                ElementObject htmlElement = htmlElementParser.parseString(htmlElementMatcher.group(0));
                 document.setRootHtmlElement(htmlElement);
             }
             return document;
