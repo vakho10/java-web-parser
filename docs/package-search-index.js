@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"ge.edu.sangu"},{"l":"ge.edu.sangu.parser"},{"l":"ge.edu.sangu.parser.html"},{"l":"ge.edu.sangu.parser.html.model"},{"l":"ge.edu.sangu.parser.json"},{"l":"ge.edu.sangu.parser.json.model"}];updateSearchResults();
