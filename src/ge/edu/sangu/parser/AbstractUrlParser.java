@@ -1,7 +1,5 @@
 package ge.edu.sangu.parser;
 
-import ge.edu.sangu.parser.html.Document;
-
 import java.io.IOException;
 import java.net.URI;
 import java.net.URL;

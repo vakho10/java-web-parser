@@ -1,6 +1,9 @@
 package ge.edu.sangu.parser.html;
 
 import ge.edu.sangu.parser.IStringParser;
+import ge.edu.sangu.parser.html.model.ElementObject;
+import ge.edu.sangu.parser.html.model.ElementText;
+import ge.edu.sangu.parser.html.model.IElement;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

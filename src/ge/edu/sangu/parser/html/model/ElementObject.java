@@ -1,4 +1,4 @@
-package ge.edu.sangu.parser.html;
+package ge.edu.sangu.parser.html.model;
 
 import ge.edu.sangu.parser.AbstractStringParser;
 

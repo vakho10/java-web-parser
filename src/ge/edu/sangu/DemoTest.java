@@ -1,6 +1,6 @@
 package ge.edu.sangu;
 
-import ge.edu.sangu.parser.html.ElementObject;
+import ge.edu.sangu.parser.html.model.ElementObject;
 import ge.edu.sangu.parser.html.HTMLParser;
 
 public class DemoTest {
